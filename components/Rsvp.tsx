@@ -8,15 +8,15 @@ export default function RSVP() {
         <h2 className="text-xl font-semibold mb-4 text-center">RSVP</h2>
         <form className="flex flex-col gap-4 max-w-md mx-auto">
           <Input type="text" placeholder="Your name" />
-          <Select>
+          {/* <Select>
             <SelectTrigger>
               <SelectValue placeholder="Select an option" />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent >
               <SelectItem value="yes">Will attend</SelectItem>
               <SelectItem value="no">Can't make it</SelectItem>
             </SelectContent>
-          </Select>
+          </Select> */}
           <Button type="submit">Send RSVP</Button>
         </form>
       </section>
