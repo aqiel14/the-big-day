@@ -46,7 +46,7 @@
 :root {
   /* 🎨 Color Palette */
   --color-primary: #d9d5c5; /* accent buttons or titles */
-  --color-secondary: #f0ead6; /* soft beige */
+  --color-secondary: #4c3009cc; /* soft beige */
   --color-floral: #fffaf0; /* background pattern base */
   --color-overlay: #4c3009cc; /* brown tint */
   --color-text-primary: #dbd5c4; /* for headings */

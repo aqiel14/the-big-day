@@ -12,9 +12,16 @@ export const couple = {
 };
 
 export const weddingDetails = {
-  date: "Aug 21th, 2025",
-  time: "4:00 PM",
-  location: "Rose Garden, Wonderland",
+  akadNikah: {
+    date: "Aug 21th, 2025",
+    time: "1:00 PM",
+    location: "Rose Garden, Wonderland",
+  },
+  resepsi: {
+    date: "Aug 21th, 2025",
+    time: "4:00 PM",
+    location: "Rose Garden, Wonderland",
+  },
 };
 
 export const galleryImages = [
