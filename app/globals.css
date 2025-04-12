@@ -45,12 +45,13 @@
 
 :root {
   /* 🎨 Color Palette */
-  --color-primary: #b08968; /* accent buttons or titles */
+  --color-primary: #d9d5c5; /* accent buttons or titles */
   --color-secondary: #f0ead6; /* soft beige */
   --color-floral: #fffaf0; /* background pattern base */
-  --color-overlay: rgba(101, 67, 33, 0.4); /* brown tint */
+  --color-overlay: #4c3009cc; /* brown tint */
   --color-text-primary: #dbd5c4; /* for headings */
   --color-text-secondary: #4c3009; /* for paragraphs */
+  --color-text-white: #fff;
 }
 
 .dark {

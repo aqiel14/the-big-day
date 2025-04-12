@@ -6,6 +6,7 @@ import Gallery from "@/components/Gallery";
 import Hero from "@/components/Hero";
 import Jumbo from "@/components/Jumbo";
 import MessageBox from "@/components/MessageBox";
+import Qs from "@/components/Qs";
 import RSVP from "@/components/Rsvp";
 import { Button } from "@/components/ui/Button";
 import WeddingDetails from "@/components/WeddingDetails";
@@ -23,6 +24,10 @@ export default function Home() {
         <main className="bg-gray-200/80 ">
           <section id="jumbo">
             <Jumbo />
+          </section>
+
+          <section id="qs">
+            <Qs />
           </section>
 
           <section id="couple">
