@@ -29,6 +29,10 @@ export const galleryImages = [
   "/prewed/placeholder-2.jpeg",
   "/prewed/placeholder-3.jpeg",
   "/prewed/placeholder-4.jpeg",
+  "/prewed/prewed-5.jpeg",
+  "/prewed/prewed-6.jpeg",
+  "/prewed/prewed-7.jpeg",
+  "/prewed/prewed-8.jpeg",
 ];
 
 export const messages = [
