@@ -1,20 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Garamond&display=swap");
 @import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
-
-body {
-  font-family: "Garamond", serif; /* Default font for the body */
-}
-
-.font-primary {
-  font-family: "Garamond", serif;
-}
-
-.font-secondary {
-  font-family: "Poppins", sans-serif;
-}
 
 @theme inline {
   --color-background: var(--background);
@@ -57,7 +44,8 @@ body {
 }
 
 :root {
-  /* 🎨 Color Palette */
+  --font-poppins: "Poppins", sans-serif;
+  --font-garamond: "Garamond", serif;
   --color-primary: #dbd5c4; /* accent buttons or titles */
   --color-secondary: #4c3009cc; /* soft beige */
   --color-floral: #fffaf0; /* background pattern base */
@@ -65,6 +53,18 @@ body {
   --color-text-primary: #dbd5c4; /* for headings */
   --color-text-secondary: #4c3009; /* for paragraphs */
   --color-text-white: #fff;
+}
+
+body {
+  font-family: var(--font-garamond);
+}
+
+.font-primary {
+  font-family: var(--font-garamond);
+}
+
+.font-secondary {
+  font-family: var(--font-poppins);
 }
 
 .dark {
