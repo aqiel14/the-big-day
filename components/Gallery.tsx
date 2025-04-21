@@ -37,7 +37,6 @@ export default function Gallery() {
   return (
     <section className="relative bg-[#82581E] overflow-hidden">
       {/* Background pattern rising from bottom */}
-      <div className="absolute bottom-0 left-0 w-full h-[100%] bg-[url('/Vector.svg')] bg-repeat-x bg-[length:1200px_auto] bg-top opacity-30 pointer-events-none z-0" />
 
       {/* Main content */}
       <div className="relative z-10 pb-8">

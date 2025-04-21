@@ -1,7 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Garamond&display=swap");
 @import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
+
+body {
+  font-family: "Garamond", serif; /* Default font for the body */
+}
+
+.font-primary {
+  font-family: "Garamond", serif;
+}
+
+.font-secondary {
+  font-family: "Poppins", sans-serif;
+}
 
 @theme inline {
   --color-background: var(--background);

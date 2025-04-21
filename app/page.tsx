@@ -1,5 +1,4 @@
-import Amplop from "@/components/Amplop";
-import CommentPreviewBox from "@/components/CommentPreviewBox";
+import AmplopAndRsvp from "@/components/AmplopAndRsvp";
 import Couple from "@/components/Couple";
 import Footer from "@/components/Footer";
 import Gallery from "@/components/Gallery";
@@ -20,8 +19,8 @@ export default function Home() {
       </div>
 
       {/* Scrollable Content (Right) - 1/3 width, scrollable */}
-      <div className="w-full lg:ml-[66.6667%] overflow-y-auto h-screen scroll-smooth bg-[url('/scrollable-bg.png')] bg-repeat bg-cover">
-        <main className="bg-gray-200/80 ">
+      <div className="relative w-full lg:ml-[66.6667%] overflow-y-auto h-screen scroll-smooth bg-[url('/jumbo-bg.jpg')] bg-repeat bg-cover">
+        <main className="relative z-10">
           <section id="Hero">
             <Hero />
           </section>
@@ -42,17 +41,12 @@ export default function Home() {
             <Gallery />
           </section>
 
-          <section id="amplop">
-            <Amplop />
+          <section id="amplop-and-rsvp">
+            <AmplopAndRsvp />
           </section>
 
           <section id="messages">
             <MessageBox />
-            <CommentPreviewBox />
-          </section>
-
-          <section id="rsvp">
-            <RSVP />
           </section>
 
           <Footer />
