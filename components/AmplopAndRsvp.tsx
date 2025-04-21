@@ -14,7 +14,6 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Textarea } from "./ui/textarea";
 import {
   Select,
   SelectContent,
@@ -70,8 +69,11 @@ export default function Amplop() {
           </Button>
           {showAmplop && (
             <div className="w-full flex flex-col bg-[var(--color-primary)] gap-2 rounded-4xl mt-4 text-[var(--color-text-secondary)] p-4 shadow-2xl">
-              {amplopDetails.map((ad) => (
-                <div className="w-full flex flex-col text-center items-center justify-center p-2 outline-2 shadow-xl rounded-2xl max-h-40 ">
+              {amplopDetails.map((ad, i) => (
+                <div
+                  key={i}
+                  className="w-full flex flex-col text-center items-center justify-center p-2 outline-2 shadow-xl rounded-2xl max-h-40 "
+                >
                   <Image
                     src={ad.bankImage}
                     width={64}
