@@ -1,3 +1,6 @@
+export const spreadsheetUrl =
+  "https://script.google.com/macros/s/AKfycbwQozBcczbQqRFlWZrY6YIvP5L-E9DeMjVhmYZkTPJvrvGx_NZwjC4-FFTkhU5tDbwUaA/exec";
+
 export const couple = {
   groom: "Bayu",
   groomFull: "Bayu Tri Anggoro",

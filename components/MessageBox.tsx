@@ -6,6 +6,7 @@ import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Button } from "./ui/Button";
 import { Label } from "./ui/label";
+import { spreadsheetUrl } from "@/lib/data";
 
 type Message = {
   name: string;
@@ -21,9 +22,7 @@ export default function MessageBox() {
   const [messages, setMessages] = useState<Message[]>([]);
 
   const fetchMessages = async () => {
-    const res = await fetch(
-      "https://script.google.com/macros/s/AKfycbzYF4XBnpNEM3G05KzRw_IxVJisE_owUge3Zig4RdsqVgOBlocYn6KJEXPciD6ccex8Pg/exec"
-    );
+    const res = await fetch(spreadsheetUrl);
     const data = await res.json();
     setMessages(data.reverse()); // newest first
   };
@@ -37,17 +36,14 @@ export default function MessageBox() {
     setLoading(true);
 
     try {
-      await fetch(
-        "https://script.google.com/macros/s/AKfycbzYF4XBnpNEM3G05KzRw_IxVJisE_owUge3Zig4RdsqVgOBlocYn6KJEXPciD6ccex8Pg/exec",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          mode: "no-cors", // TEMP workaround
-          body: JSON.stringify({ name, message }),
-        }
-      );
+      await fetch(spreadsheetUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        mode: "no-cors", // TEMP workaround
+        body: JSON.stringify({ name, message }),
+      });
 
       setSubmitted(true);
       setName("");

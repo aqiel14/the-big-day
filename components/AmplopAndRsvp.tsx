@@ -1,5 +1,5 @@
 "use client";
-import { amplopDetails } from "@/lib/data";
+import { amplopDetails, spreadsheetUrl } from "@/lib/data";
 import { Button } from "./ui/Button";
 import Image from "next/image";
 import { useState } from "react";
@@ -39,6 +39,16 @@ export default function Amplop() {
     try {
       // Example: send to API or Google Sheet
       console.log({ name, attending, guestCount });
+
+      await fetch(spreadsheetUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        mode: "no-cors", // TEMP workaround
+
+        body: JSON.stringify({ name, attending, guestCount }),
+      });
 
       setSubmitted(true);
       setName("");
