@@ -13,10 +13,10 @@ export default function Hero() {
         </div>
         <div className="flex flex-col  justify-center items-center ">
           <Image
-            src={"/Jumbo.png"}
+            src={"/jumbo.png"}
             width={512}
             height={256}
-            alt={"Jumbo"}
+            alt={"hero"}
             className="rounded-2xl border-4 border-[#4C3009]"
           />
         </div>

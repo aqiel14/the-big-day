@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Poppins, EB_Garamond } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -10,6 +11,17 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const poppins = Poppins({
+  weight: ["400", "600"],
+  subsets: ["latin"],
+  variable: "--font-poppins",
+});
+
+const garamond = EB_Garamond({
+  subsets: ["latin"],
+  variable: "--font-garamond",
 });
 
 export const metadata: Metadata = {
@@ -29,10 +41,12 @@ export default function RootLayout({
         <link
           href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Garamond&display=swap"
           rel="preload"
+          as="font"
+          type="font/woff2"
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased font-primary`}
+        className={`${poppins.variable} ${garamond.variable} antialiased font-primary`}
       >
         {children}
       </body>
