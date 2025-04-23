@@ -9,16 +9,22 @@ export default function MusicBox() {
 
   useEffect(() => {
     const audio = audioRef.current;
-    if (audio) {
+
+    const handlePlayMusic = () => {
+      if (!audio) return;
+
       audio.volume = 0.5;
-      audio.muted = false; // Ensure the audio is not muted
-      const playPromise = audio.play();
-      if (playPromise !== undefined) {
-        playPromise.catch((err) => {
-          console.warn("Autoplay prevented:", err);
-        });
-      }
-    }
+      audio
+        .play()
+        .then(() => setIsPlaying(true))
+        .catch((err) => console.warn("Play blocked:", err));
+    };
+
+    window.addEventListener("play-music", handlePlayMusic);
+
+    return () => {
+      window.removeEventListener("play-music", handlePlayMusic);
+    };
   }, []);
 
   const toggleMusic = () => {
@@ -27,27 +33,28 @@ export default function MusicBox() {
 
     if (isPlaying) {
       audio.pause();
+      setIsPlaying(false);
     } else {
-      audio.play().catch(() => {});
+      audio.volume = 0.5;
+      audio
+        .play()
+        .then(() => setIsPlaying(true))
+        .catch((err) => console.warn("Manual play failed:", err));
     }
-
-    setIsPlaying(!isPlaying);
   };
 
   return (
     <>
-      <audio ref={audioRef} src="/music.mp3" loop />
-
+      <audio ref={audioRef} src="/music.mp3" loop preload="auto" />
       <button
         onClick={toggleMusic}
         aria-label="Toggle music"
-        className={`fixed bottom-6 right-6 z-50 rounded-full p-4 shadow-md transition-all duration-300 
+        className={`fixed bottom-6 right-6 z-50 rounded-full p-4 shadow-md transition-all duration-300
           ${
             isPlaying
-              ? "bg-[var(--color-primary)] text-white hover:bg-[var(--color-primary-dark)]"
-              : "bg-gray-300 text-gray-600 hover:bg-gray-400"
+              ? "bg-[var(--color-primary)] text-white animate-spin"
+              : "bg-gray-300 text-gray-600"
           }
-          ${isPlaying ? "animate-spin" : ""}
         `}
       >
         {isPlaying ? (

@@ -21,10 +21,14 @@ export default function Jumbo() {
   }, []);
 
   const handleDismiss = () => {
+    // 👉 Fire the custom event
+    window.dispatchEvent(new Event("play-music"));
+
+    // Fade out splash
     setFadingOut(true);
     setTimeout(() => {
       setShowSplash(false);
-    }, 500); // match with transition duration
+    }, 500);
   };
 
   if (isMobile && showSplash) {
